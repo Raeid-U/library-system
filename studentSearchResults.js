@@ -34,7 +34,7 @@ function displayResults(){
     bookPubDateStud = JSON.parse(localStorage.getItem("studPubDateKey"));
 
 //New If statement for search terms
-let results = ''
+let results = '';
 
 for (i = 0; i < bookNumLib.length; i++){
     if (bookNumLib[i] === bookNumStud || 
@@ -44,24 +44,16 @@ for (i = 0; i < bookNumLib.length; i++){
         bookTypeLib[i] === bookTypeStud0 || 
         bookTypeLib[i] === bookTypeStud1 || 
         bookTypeLib[i] === bookTypeStud2){
-        results += `Book Number: ${bookNumLib[i]} \nTitle: ${bookTitleLib[i]} \nAuthor: ${bookAuthorLib[i]} \nBook Type: ${bookTypeLib[i]} \nPublication Date: ${bookPubDateLib[i]} \nAvailable?: ${bookAvailLib[i]}\n \n`
+        results += `Book Number: ${bookNumLib[i]} \nTitle: ${bookTitleLib[i]} \nAuthor: ${bookAuthorLib[i]} \nBook Type: ${bookTypeLib[i]} \nPublication Date: ${bookPubDateLib[i]} \nAvailable?: ${bookAvailLib[i]}\n \n`;
     }  
 }
 
-if (results != ' '){
+if (results != ''){
     document.getElementById("display1").innerHTML = results;
+    results = ' '
 } else (
     document.getElementById("display1").innerHTML = 'No Search Results were Found'
 )
 
-
-    // document.getElementById("display1").innerHTML = (`Book Number: ${bookNumLib[i]} \nTitle: ${bookTitleLib[i]} \nAuthor: ${bookAuthorLib[i]} \nBook Type: ${bookTypeLib[i]} \nPublication Date: ${bookPubDateLib[i]}`);
-
-//If statement for search terms
-    // if(bookNumLib === bookNumStud || bookTitleLib === bookTitleStud || bookAuthorLib === bookAuthorStud || bookPubDateLib === bookPubDateStud || bookTypeLib === bookTypeStud0 || bookTypeLib === bookTypeStud1 || bookTypeLib === bookTypeStud2){
-    //     document.getElementById("display1").innerHTML = (`Book Number: ${bookNumLib} \nTitle: ${bookTitleLib} \nAuthor: ${bookAuthorLib} \nBook Type: ${bookTypeLib} \nPublication Date: ${bookPubDateLib}`);
-    // }else if (bookNumLib !== bookNumStud && bookTitleLib !== bookTitleStud && bookAuthorLib !== bookAuthorStud && bookPubDateLib !== bookPubDateStud && (bookTypeLib !== bookTypeStud0 && bookTypeLib !== bookTypeStud1 && bookTypeLib !== bookTypeStud2)){
-    //     document.getElementById("display2").innerHTML = (`No Search Terms Match`);
-    // } 
 }
 
